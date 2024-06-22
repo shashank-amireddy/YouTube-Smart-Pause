@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Smart Pause",
+    "version": "1.0",
+    "description": "Automatically pause and play YouTube videos when switching tabs.",
+    "permissions": [
+      "tabs",
+      "https://www.youtube.com/*"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
